@@ -39,4 +39,8 @@ INITIAL_BALANCE = 0.0
     sorted_transactions = transactions.sort_by { |transaction| transaction[:transaction].date_created }.reverse
     sorted_transactions
   end
+
+  def printed_statement
+    puts @printer.pretty_print(sort_by_date(transactions))
+  end
 end
