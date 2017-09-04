@@ -1,10 +1,15 @@
+require_relative 'credit'
+
 class BankAccount
 
 INITIAL_BALANCE = 0.0
 
+  attr_reader :transactions
+
   def initialize
     @balance = INITIAL_BALANCE
     @created_at = Time.now
+    @transactions = []
   end
 
   def get_balance
@@ -17,5 +22,7 @@ INITIAL_BALANCE = 0.0
 
   def make_deposit(amount)
     @balance += amount
+    credit = Credit.new(amount)
+    @transactions << {transaction: credit, balance: @balance}
   end
 end
