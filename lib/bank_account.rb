@@ -1,5 +1,6 @@
 require_relative 'credit'
 require_relative 'debit'
+require_relative 'printer'
 
 class BankAccount
 
@@ -7,7 +8,8 @@ INITIAL_BALANCE = 0.0
 
   attr_reader :transactions
 
-  def initialize
+  def initialize(printer = Printer.new)
+    @printer = printer
     @balance = INITIAL_BALANCE
     @created_at = Time.now
     @transactions = []
@@ -29,7 +31,12 @@ INITIAL_BALANCE = 0.0
 
   def make_withdrawal(amount)
     @balance -= amount
-    debit = Debit.new(amount)
+    debit = Debit.new(-amount)
     @transactions << {transaction: debit, balance: @balance}
+  end
+
+  def sort_by_date(transactions)
+    sorted_transactions = transactions.sort_by { |transaction| transaction[:transaction].date_created }.reverse
+    sorted_transactions
   end
 end

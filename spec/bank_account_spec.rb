@@ -1,7 +1,10 @@
 require 'bank_account'
 
 describe BankAccount do
-  let(:bank_account) { described_class.new }
+  let(:printer) { double("Printer") }
+  let(:bank_account) { described_class.new(printer) }
+  let(:credit) { double("Credit", amount: 10.0, date_created: "04/09/2017")}
+  let(:debit) { double("Debit", amount: -5.0, date_created: "05/09/2017")}
 
   context "when creating a new account" do
 
@@ -43,4 +46,14 @@ describe BankAccount do
       expect(bank_account.get_balance).to equal(5.00)
     end
   end
+
+  describe "sort_by_date" do
+
+    it "sorts the transactions by date" do
+      transactions = [ {transaction: credit, balance: 10.0}, {transaction: debit, balance: 5.0}]
+      expect(bank_account.sort_by_date(transactions)).to eq([{transaction: debit, balance: 5.0},  {transaction: credit, balance: 10.0}])
+    end
+
+  end
+
 end
