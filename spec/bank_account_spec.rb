@@ -18,13 +18,29 @@ describe BankAccount do
     end
   end
 
-context "when making a deposit" do
+  context "when making a deposit" do
 
-  it "increases the balance by that amount" do
-    expect{ bank_account.make_deposit(10.00)}.to change{bank_account.get_balance}.by(10.00)
+    it "increases the balance by that amount" do
+      expect{ bank_account.make_deposit(10.00)}.to change{bank_account.get_balance}.by(10.00)
+    end
+
+    it "creates a transaction" do
+      expect{ bank_account.make_deposit(10.00)}.to change{bank_account.transactions.count}.by(1)
+    end
   end
-end
-  it "creates a transaction" do
-    expect{ bank_account.make_deposit(10.00)}.to change{bank_account.transactions.count}.by(1)
+
+  context "when making a withdrawal" do
+    before do
+      bank_account.make_deposit(15.00)
+    end
+
+    it "decreases the balance by that amount" do
+      expect{ bank_account.make_withdrawal(10.00)}.to change{bank_account.get_balance}.by(-10.00)
+    end
+
+    it "has a new balance" do
+      bank_account.make_withdrawal(10.00)
+      expect(bank_account.get_balance).to equal(5.00)
+    end
   end
 end

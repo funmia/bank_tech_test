@@ -1,4 +1,5 @@
 require_relative 'credit'
+require_relative 'debit'
 
 class BankAccount
 
@@ -24,5 +25,11 @@ INITIAL_BALANCE = 0.0
     @balance += amount
     credit = Credit.new(amount)
     @transactions << {transaction: credit, balance: @balance}
+  end
+
+  def make_withdrawal(amount)
+    @balance -= amount
+    debit = Debit.new(amount)
+    @transactions << {transaction: debit, balance: @balance}
   end
 end
