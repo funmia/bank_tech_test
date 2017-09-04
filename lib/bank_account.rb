@@ -15,4 +15,7 @@ INITIAL_BALANCE = 0.0
     @created_at.strftime("Account was opened on %d/%m/%Y")
   end
 
+  def make_deposit(amount)
+    @balance += amount
+  end
 end

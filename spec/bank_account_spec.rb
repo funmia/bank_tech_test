@@ -14,4 +14,9 @@ describe BankAccount do
     end
   end
 
+  it "can make a deposit" do
+    bank_account.make_deposit(50.00)
+    expect(bank_account.get_balance).to eq (50.00)
+  end
+
 end
