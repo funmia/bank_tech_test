@@ -7,8 +7,11 @@ describe Credit do
     expect(credit).to be_kind_of(Credit)
   end
 
-  it "has a date and amount" do
+  it "has a date" do
     expect(credit.date_created).to be
+  end
+
+  it "has an amount" do
     expect(credit.amount).to equal(10.00)
   end
 end

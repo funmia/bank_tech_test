@@ -1,7 +1,7 @@
 require 'debit'
 
 describe Debit do
-  let(:debit) { described_class.new(-10.00) }
+  let(:debit) { described_class.new(10.00) }
 
   it "creates a debit" do
     expect(debit).to be_kind_of(Debit)

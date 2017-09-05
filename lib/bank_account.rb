@@ -5,10 +5,12 @@ require_relative 'printer'
 class BankAccount
   INITIAL_BALANCE = 0.0
 
-  attr_reader :transactions
+  attr_reader :transactions, :credit_class, :debit_class
 
-  def initialize(printer = Printer.new)
+  def initialize(printer = Printer.new, credit_class = Credit, debit_class = Debit)
     @printer = printer
+    @credit_class = credit_class
+    @debit_class = debit_class
     @balance = INITIAL_BALANCE
     @created_at = Time.now
     @transactions = []
@@ -24,13 +26,13 @@ class BankAccount
 
   def make_deposit(amount)
     @balance += amount
-    credit = Credit.new(amount)
+    credit = credit_class.new(amount)
     @transactions << { transaction: credit, balance: @balance }
   end
 
   def make_withdrawal(amount)
     @balance -= amount
-    debit = Debit.new(-amount)
+    debit = debit_class.new(amount)
     @transactions << { transaction: debit, balance: @balance }
   end
 

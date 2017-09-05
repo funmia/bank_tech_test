@@ -2,7 +2,7 @@ class Debit
   attr_reader :amount
 
   def initialize(amount)
-    @amount = amount
+    @amount = -amount
     @created_at = Time.now
   end
 
