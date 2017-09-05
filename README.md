@@ -1,4 +1,5 @@
-![Build Status] (https://travis-ci.org/funmia/bank_tech_test.svg?branch=master)
+![Build Status](https://travis-ci.org/funmia/bank_tech_test.svg?branch=master)
+
 # Bank tech test
 
 Today, you'll practice doing a tech test.
