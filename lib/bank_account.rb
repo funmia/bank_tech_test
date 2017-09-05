@@ -39,7 +39,7 @@ class BankAccount
     sorted_transactions
   end
 
-  def printed_statement
+  def print_statement
     puts @printer.pretty_print(sort_by_date(transactions))
   end
 end
