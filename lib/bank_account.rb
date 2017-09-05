@@ -14,7 +14,7 @@ class BankAccount
     @transactions = []
   end
 
-  def get_balance
+  def account_balance
     @balance
   end
 
@@ -25,13 +25,13 @@ class BankAccount
   def make_deposit(amount)
     @balance += amount
     credit = Credit.new(amount)
-    @transactions << {transaction: credit, balance: @balance}
+    @transactions << { transaction: credit, balance: @balance }
   end
 
   def make_withdrawal(amount)
     @balance -= amount
     debit = Debit.new(-amount)
-    @transactions << {transaction: debit, balance: @balance}
+    @transactions << { transaction: debit, balance: @balance }
   end
 
   def sort_by_date(transactions)

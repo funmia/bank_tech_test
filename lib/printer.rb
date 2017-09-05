@@ -4,13 +4,13 @@ class Printer
     output = " date       || credit || debit || balance \n"
     transactions.each do |transaction|
       if transaction[:transaction].instance_of?(Credit)
-       template = " %{date} || %{amount}   || -     || %{balance} \n"
-       output += template % {date: transaction[:transaction].date_created, amount: transaction[:transaction].amount, balance: transaction[:balance]}
+        template = " %{date} || %{amount}   || -     || %{balance} \n"
+        output += template % { date: transaction[:transaction].date_created, amount: transaction[:transaction].amount, balance: transaction[:balance] }
       else
         template = " %{date} || -      || %{amount}  || %{balance} \n"
-        output += template % {date: transaction[:transaction].date_created, amount: transaction[:transaction].amount, balance: transaction[:balance]}
+        output += template % { date: transaction[:transaction].date_created, amount: transaction[:transaction].amount, balance: transaction[:balance] }
       end
     end
-      output
+    output
   end
 end
