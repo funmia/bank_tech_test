@@ -57,4 +57,11 @@ describe BankAccount do
       expect(bank_account.sort_by_date(transactions)).to eq([{ transaction: debit, balance: 5.0 }, { transaction: credit, balance: 10.0 }])
     end
   end
+
+  describe "print_statement" do
+    it "prints a nicely formatted bank statement" do
+      expect(printer).to receive(:pretty_print)
+      bank_account.print_statement
+    end
+  end
 end
