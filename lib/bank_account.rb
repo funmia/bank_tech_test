@@ -3,8 +3,7 @@ require_relative 'debit'
 require_relative 'printer'
 
 class BankAccount
-
-INITIAL_BALANCE = 0.0
+  INITIAL_BALANCE = 0.0
 
   attr_reader :transactions
 

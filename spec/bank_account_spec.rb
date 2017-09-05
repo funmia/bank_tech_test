@@ -3,8 +3,8 @@ require 'bank_account'
 describe BankAccount do
   let(:printer) { double("Printer")  }
   let(:bank_account) { described_class.new(printer) }
-  let(:credit) { double("Credit", amount: 10.0, date_created: "04/09/2017")}
-  let(:debit) { double("Debit", amount: -5.0, date_created: "05/09/2017")}
+  let(:credit) { double("Credit", amount: 10.0, date_created: "04/09/2017") }
+  let(:debit) { double("Debit", amount: -5.0, date_created: "05/09/2017") }
 
   context "when creating a new account" do
 

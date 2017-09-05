@@ -1,7 +1,11 @@
 source 'https://rubygems.org'
 ruby '2.4.0'
 
+gem 'rubocop'
+
 group :test do
-  gem "rspec"
-  gem "rake"
+  gem 'rake'
+  gem 'rspec'
+  gem 'simplecov', require: false
+  gem 'simplecov-console', require: false
 end
