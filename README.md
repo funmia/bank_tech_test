@@ -85,7 +85,7 @@ $ bank_account.print_statement
 | | transactions|
 | | print_statement|
 
--  Each class was created in Test driven way and my test coverage is currently 97.22%
+-  Each class was created in Test driven way and my test coverage is currently 98.21%
 
 - I decided to make a separate object for each type of transaction which are the Debit and Credit objects.
 
