@@ -14,10 +14,6 @@ describe BankAccount do
       expect(bank_account.account_balance).to equal(0.0)
     end
 
-    it "has a date of creation" do
-      expect(bank_account.date_created).to be
-    end
-
     it "has no transactions" do
       expect(bank_account.transactions).to eq []
     end

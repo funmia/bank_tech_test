@@ -20,10 +20,6 @@ class BankAccount
     @balance
   end
 
-  def date_created
-    @created_at.strftime("Account was opened on %d/%m/%Y")
-  end
-
   def make_deposit(amount)
     @balance += amount
     credit = credit_class.new(amount)

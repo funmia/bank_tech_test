@@ -1,8 +1,9 @@
 class Credit
-  attr_reader :amount
+  attr_reader :amount, :current_balance
 
-  def initialize(amount)
+  def initialize(amount, current_balance)
     @amount = amount
+    @current_balance = current_balance
     @created_at = Time.now
   end
 
