@@ -29,7 +29,7 @@ class BankAccount
   end
 
   def sort_by_date(transactions)
-    sorted_transactions = transactions.sort_by { |transaction| transaction[:transaction].date_created }.reverse
+    sorted_transactions = transactions.sort_by { |transaction| transaction.date_created }.reverse
     sorted_transactions
   end
 

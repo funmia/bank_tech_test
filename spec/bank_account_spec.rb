@@ -67,8 +67,9 @@ describe BankAccount do
 
   describe "sort_by_date" do
     it "sorts the transactions by date" do
-      transactions = [{ transaction: credit, balance: 10.0 }, { transaction: debit, balance: 5.0 }]
-      expect(bank_account.sort_by_date(transactions)).to eq([{ transaction: debit, balance: 5.0 }, { transaction: credit, balance: 10.0 }])
+      unsorted_transactions = [credit, debit]
+      sorted_transactions = [debit, credit]
+      expect(bank_account.sort_by_date(unsorted_transactions)).to eq(sorted_transactions)
     end
   end
 
