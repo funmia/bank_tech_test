@@ -50,7 +50,6 @@ $ bundle
 ```
 $ rspec
 ```
-![Imgur](https://i.imgur.com/Sauti18.png)
 
 #### Run the app
 ```
@@ -75,7 +74,7 @@ $ bank_account.print_statement
 | | transactions|
 | | print_statement|
 
--  Each class was created in Test driven way and my test coverage is currently 98.21%
+-  Each class was created in Test driven way and my test coverage is currently 100%
 
 - I decided to make a separate object for each type of transaction which are the Debit and Credit objects.
 

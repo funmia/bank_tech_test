@@ -7,6 +7,6 @@ describe Printer do
   let(:transactions) { [credit, debit] }
 
   it "print a bank statement" do
-    expect(printer.pretty_print(transactions)).to eq(" date       || credit || debit || balance \n 04/09/2017 || -      || 10.0  || 10.0 \n 05/09/2017 || -      || -5.0  || -5.0 \n")
+    expect(printer.pretty_print(transactions)).to eq(" date       || credit || debit || balance \n 04/09/2017 || 10.0   || -     || 10.0 \n 05/09/2017 || -      || -5.0  || -5.0 \n")
   end
 end
