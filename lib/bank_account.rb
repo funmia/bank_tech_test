@@ -19,13 +19,13 @@ class BankAccount
   def make_deposit(amount)
     @account_balance += amount
     credit = credit_class.new(amount, account_balance)
-    transactions << { transaction: credit, balance: account_balance }
+    transactions << credit
   end
 
   def make_withdrawal(amount)
     @account_balance -= amount
     debit = debit_class.new(amount, account_balance)
-    transactions << { transaction: debit, balance: account_balance }
+    transactions << debit
   end
 
   def sort_by_date(transactions)

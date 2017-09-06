@@ -25,7 +25,7 @@ describe BankAccount do
 
     context "when making a deposit" do
       before do
-        allow(credit_class).to receive(:new).with(credit_amount, current_balance)
+        allow(credit_class).to receive(:new).with(credit_amount, current_balance) { credit }
       end
 
       it "increases the balance by that amount" do
@@ -34,6 +34,11 @@ describe BankAccount do
 
       it "creates a transaction" do
         expect { bank_account.make_deposit(credit_amount) }.to change { bank_account.transactions.count }.by(1)
+      end
+
+      it "includes the credit transaction" do
+        bank_account.make_deposit(credit_amount)
+        expect(bank_account.transactions).to include( credit )
       end
     end
   end
@@ -46,11 +51,16 @@ describe BankAccount do
       before do
         allow(credit_class).to receive(:new).with(credit_amount, increased_balance)
         bank_account.make_deposit(credit_amount)
-        allow(debit_class).to receive(:new).with(debit_amount, current_balance)
+        allow(debit_class).to receive(:new).with(debit_amount, current_balance) { debit }
       end
 
       it "decreases the balance by that amount" do
         expect { bank_account.make_withdrawal(debit_amount) }.to change { bank_account.account_balance }.by(-10.00)
+      end
+
+      it "includes the debit transaction" do
+        bank_account.make_withdrawal(debit_amount)
+        expect(bank_account.transactions).to include( debit )
       end
     end
   end
