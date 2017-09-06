@@ -65,14 +65,6 @@ describe BankAccount do
     end
   end
 
-  describe "sort_by_date" do
-    it "sorts the transactions by date" do
-      unsorted_transactions = [credit, debit]
-      sorted_transactions = [debit, credit]
-      expect(bank_account.sort_by_date(unsorted_transactions)).to eq(sorted_transactions)
-    end
-  end
-
   describe "print_statement" do
     it "prints a nicely formatted bank statement" do
       expect(printer).to receive(:pretty_print)

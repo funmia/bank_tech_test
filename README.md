@@ -64,6 +64,7 @@ $ bank_account.print_statement
 ![Screenshot](https://i.imgur.com/rdLhDOk.png)
 
 #### My Approach
+- I have setup Travis CI for the purpose of continuous integration.
 - The app has four classes BankAccount, Debit, Credit and Printer
 - I started with a domain domain model of the BankAccount class
 
@@ -74,7 +75,7 @@ $ bank_account.print_statement
 | | transactions|
 | | print_statement|
 
--  Each class was created in Test driven way and my test coverage is currently 100%
+-  Each class was created in test driven way and my test coverage is currently 100%
 
 - I decided to make a separate object for each type of transaction which are the Debit and Credit objects.
 

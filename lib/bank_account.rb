@@ -28,12 +28,7 @@ class BankAccount
     transactions << debit
   end
 
-  def sort_by_date(transactions)
-    sorted_transactions = transactions.sort_by { |transaction| transaction.date_created }.reverse
-    sorted_transactions
-  end
-
   def print_statement
-    puts @printer.pretty_print(sort_by_date(transactions))
+    puts @printer.pretty_print(transactions)
   end
 end
