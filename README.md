@@ -2,16 +2,6 @@
 
 # Bank tech test
 
-Today, you'll practice doing a tech test.
-
-For most tech tests, you'll essentially have unlimited time.  This practice session is about producing the best code you can when there is a minimal time pressure.
-
-You'll get to practice your OO design and TDD skills.
-
-You'll work alone, and you'll also review your own code so you can practice reflecting on and improving your own work.
-
-## Specification
-
 ### Requirements
 
 * You should be able to interact with your code via a REPL like IRB or the JavaScript console.  (You don't need to implement a command line interface that takes input from STDIN.)
@@ -36,7 +26,7 @@ date || credit || debit || balance
 
 ## My Solution
 
-##### Tech
+## Tech
 - Ruby
 - [Rspec](http://rspec.info/documentation/)
 - [travis-ci](https://travis-ci.org/)
